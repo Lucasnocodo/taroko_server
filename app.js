@@ -14,8 +14,8 @@ const specs = require('./docs/swaggerDocs');
 const app = express();
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
 
 // Open the server to public
 app.use(cors());
