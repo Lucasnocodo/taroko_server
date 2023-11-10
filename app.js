@@ -16,7 +16,15 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+const corsOptions = {
+  origin: '*', // This will allow requests from any domain. Adjust as necessary for security.
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Explicitly allow these methods
+  preflightContinue: false,
+  optionsSuccessStatus: 204 // Some legacy browsers (IE11, various SmartTVs) choke on 204
+};
 
+// Then apply the CORS middleware to the Express app with the options
+app.use(cors(corsOptions));
 // Open the server to public
 app.use(cors());
 
