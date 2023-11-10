@@ -5,9 +5,9 @@ const logger = require('morgan');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 
-const indexRouter = require('./routes/index');
-const contactsRouter = require('./routes/contacts');
-const adminRouter = require('./routes/admin');
+const indexRouter = require('./api/index');
+const contactsRouter = require('./api/contacts');
+const adminRouter = require('./api/admin');
 
 const specs = require('./docs/swaggerDocs');
 
@@ -31,12 +31,12 @@ app.use('/api', contactsRouter);
 app.use('/api', adminRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
