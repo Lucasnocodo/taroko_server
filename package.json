@@ -8,7 +8,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "NODE_ENV=development nodemon ./bin/www",
-    "start-prod": "NODE_ENV=production node ./bin/www"
+    "build": "NODE_ENV=production node ./bin/www"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
