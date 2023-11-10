@@ -5,9 +5,9 @@ const logger = require('morgan');
 const cors = require('cors');
 const swaggerUi = require('swagger-ui-express');
 
-const indexRouter = require('./api/index');
-const contactsRouter = require('./api/contacts');
-const adminRouter = require('./api/admin');
+const indexRouter = require('./routes/index');
+const contactsRouter = require('./routes/contacts');
+const adminRouter = require('./routes/admin');
 
 const specs = require('./docs/swaggerDocs');
 
