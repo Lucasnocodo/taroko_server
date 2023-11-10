@@ -25,8 +25,7 @@ const corsOptions = {
 
 // Then apply the CORS middleware to the Express app with the options
 app.use(cors(corsOptions));
-// Open the server to public
-app.use(cors());
+
 
 app.use(logger('dev'));
 app.use(express.json());
